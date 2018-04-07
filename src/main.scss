@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400');
+@import "variables.scss";
+@import "include-media.scss";
+
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 992px,
+  'widescreen': 1200px
+);
+
+body {
+  margin: 0;
+  padding: 0;
+  font:300 16px/20px $base-font;
+  color: $gray;
+  background: url(images/bg-body.jpg) no-repeat;
+  background-size: cover;
+  min-width: 320px;
+}
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: calc(100vh - 39px);
+
+  @include media('<phone') {
+    height: calc(100vh - 50px);
+  }
+}
+
+.main-holder {
+  max-width: 425px;
+  width: 100%;
+  margin: 30px auto;
+  background: #8cc9bc;
+  border-radius: 11px;
+  border-top: 1px solid #d1e9e4;
+  position: relative;
+  z-index: 2;
+
+  @include media('<phone') {
+    margin: 50px auto;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 0;
+    top: 0;
+    box-shadow: 0px 32px 25px 4px rgba(0,0,0,0.2);
+    z-index: -1;
+  }
+}
+
+.main-frame {
+  background: #8cc9bc;
+  border-radius: 11px;
+  border-top: 1px solid #d1e9e4;
+  padding: 32px 0 0;
+
+  @include media('<tablet' , 'landscape') {
+    padding: 10px 0 0;
+  }
+}
+
+.header {
+  text-align: center;
+  color: $white;
+}
+
+h1 {
+  font-size: 29px;
+  line-height: 22px;
+  color: $white;
+  margin: 0;
+  font-weight: normal;
+
+  @include media('<tablet' , 'landscape') {
+    font-size: 19px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 131px;
+    height: 2px;
+    margin: 25px auto 33px;
+    background: $white;
+
+    @include media('<phone') {
+      margin: 15px auto 18px;
+    }
+
+    @include media('<tablet' , 'landscape') {
+      margin: 7px auto 8px;
+    }
+  }
+}
+
+.user-box {
+  width: 195px;
+  height: 195px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 3px solid $white;
+  margin: 0 auto 32px;
+  box-sizing: border-box;
+
+  @include media('<phone') {
+    width: 146px;
+    height: 146px;
+    margin-bottom: 22px;
+  }
+
+  @include media('<tablet' , 'landscape') {
+    width: 116px;
+    height: 116px;
+    margin-bottom: 12px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+    border-radius: 100%;
+  }
+}
+
+.list-user {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  text-align: center;
+  font-size: 23px;
+  line-height: 28px;
+  background: $light-gray;
+  border-radius: 0 0 11px 11px;
+  border-bottom: 1px solid $light-green;
+
+  @include media('<phone') {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  @include media('<tablet' , 'landscape') {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  li {
+    width: 50%;
+    padding: 15px 5px 11px;
+    position: relative;
+
+    @include media('<tablet' , 'landscape') {
+      padding: 7px 5px 5px;
+    }
+
+    + li {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: #c9cbd0;
+      }
+    }
+  }
+
+  a {
+    color: $gray;
+    text-decoration: none;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.footer {
+  background: $white;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 21px;
+  color: $dark-gray;
+  position: relative;
+  z-index: 2;
+
+  @include media('<tablet' , 'landscape') {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  @include media('<phone') {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  a {
+    color: $dark-gray;
+    text-decoration: none;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .link,
+  .text {
+    @include media('<tablet' , 'landscape') {
+      width: 33.333%;
+      text-align: center;
+    }
+
+    @include media('<phone') {
+      width: 33.333%;
+      text-align: center;
+    }
+  }
+}
+
+
+.footer-holder {
+  max-width: 660px;
+  margin: 0 auto;
+  height: 39px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include media('<phone') {
+    height: 50px;
+  }
+}
+
+.footer-logo {
+  width: 88px;
+
+  @include media('<phone') {
+    width: 68px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+}
